@@ -66,7 +66,8 @@ def save_checkpoint(
     checkpoint_path = checkpoint_dir / f"model-{step}.pt"
     torch.save(state, checkpoint_path)
     if best:
-        best_path = checkpoint_dir / "model-best.pt"
+        best_path = "/content/drive/MyDrive/Soft-VC/acoustic_model.pt"
+        logger.info(f"Saved the best model to {best_path}")
         torch.save(state, best_path)
     logger.info(f"Saved checkpoint: {checkpoint_path.stem}")
 
