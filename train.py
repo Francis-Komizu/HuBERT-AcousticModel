@@ -217,14 +217,14 @@ def train(rank, world_size, args):
 
                     validation_loss.update(loss.item())
 
-                    if rank == 0:
-                        writer.add_figure(
-                            f"generated/mel_{i}",
-                            plot_spectrogram(
-                                mels_.squeeze().transpose(0, 1).cpu().numpy()
-                            ),
-                            global_step,
-                        )
+#                     if rank == 0:
+#                         writer.add_figure(
+#                             f"generated/mel_{i}",
+#                             plot_spectrogram(
+#                                 mels_.squeeze().transpose(0, 1).cpu().numpy()
+#                             ),
+#                             global_step,
+#                         )
 
                 acoustic.train()
 
@@ -243,7 +243,7 @@ def train(rank, world_size, args):
                     )
 
                 new_best = best_loss > validation_loss.value
-                if new_best or global_step % CHECKPOINT_INTERVAL:
+                if new_best or (global_step % CHECKPOINT_INTERVAL == 0):
                     if new_best:
                         logger.info("-------- new best model found!")
                         best_loss = validation_loss.value
