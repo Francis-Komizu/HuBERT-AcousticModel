@@ -4,7 +4,7 @@ from torch.nn.modules.utils import consume_prefix_in_state_dict_if_present
 
 URLS = {
     "hubert-discrete": "https://github.com/bshall/acoustic-model/releases/download/v0.1/hubert-discrete-d49e1c77.pt",
-    "hubert-soft": "https://github.com/Francis-Komizu/Soft-VC/releases/download/acoustic_model_accelerator/ckpt-19000.pt",
+    "hubert-soft": "https://github.com/Francis-Komizu/Soft-VC/releases/download/v0.2/ckpt-67000.pt",
 }
 
 
